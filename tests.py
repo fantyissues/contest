@@ -5,6 +5,7 @@ from contest_52598_b import define_insert_index
 from contest_52599_a import is_regular_mountain
 from contest_52599_c import is_correct_sequence
 from contest_52718_a import count_numbers_less_specified
+from contest_52718_b import max_substring_len
 
 
 class ContestTestCase(unittest.TestCase):
@@ -64,6 +65,15 @@ class ContestTestCase(unittest.TestCase):
         for arr, expected in data:
             with self.subTest(arr=arr, expected=expected):
                 self.assertEqual(count_numbers_less_specified(arr), expected)
+
+    def test_max_substring_len(self):
+        data = (
+            ('abcabcbb', 3),
+            ('bbbbb', 1),
+        )
+        for string, expected in data:
+            with self.subTest(string=string, expected=expected):
+                self.assertEqual(max_substring_len(string), expected)
 
 
 if __name__ == '__main__':
