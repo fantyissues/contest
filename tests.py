@@ -7,6 +7,7 @@ from contest_52599_c import is_correct_sequence
 from contest_52718_a import count_numbers_less_specified
 from contest_52718_b import max_substring_len
 from contest_52720_a import platforms_needed
+from contest_53688_a import measurements_per_second
 
 
 class ContestTestCase(unittest.TestCase):
@@ -85,6 +86,17 @@ class ContestTestCase(unittest.TestCase):
         for arr, limit, expected in data:
             with self.subTest(arr=arr, limit=limit, expected=expected):
                 self.assertEqual(platforms_needed(arr, limit), expected)
+
+    def test_measurements_per_second(self):
+        data = (
+            (3, 3),
+            (0, 1),
+            (1, 1),
+            (5, 8),
+        )
+        for value, expected in data:
+            with self.subTest(value=value, expected=expected):
+                self.assertEqual(measurements_per_second(value), expected)
 
 
 if __name__ == '__main__':
