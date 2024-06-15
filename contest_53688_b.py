@@ -2,12 +2,10 @@ import sys
 
 
 def rhyme(N: int, K: int) -> int:
-    applicants = list(range(1, N + 1))
-    index = 0
-    while len(applicants) > 1:
-        index = (index + K - 1) % len(applicants)
-        applicants.pop(index)
-    return applicants[0]
+    result = 0
+    for i in range(1, N+1):
+        result = (result + K) % i
+    return result + 1
 
 
 def main():
