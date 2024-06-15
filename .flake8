@@ -1,0 +1,6 @@
+[flake8]
+extend-exclude =
+    venv
+extend-ignore =
+    # local variable is assigned to but never used
+    F841
