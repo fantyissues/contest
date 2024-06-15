@@ -2,10 +2,9 @@ import sys
 
 
 def rhyme(N: int, K: int) -> int:
-    result = 0
-    for i in range(1, N+1):
-        result = (result + K) % i
-    return result + 1
+    if N == 1:
+        return 1
+    return (rhyme(N-1, K) + K - 1) % N + 1
 
 
 def main():
