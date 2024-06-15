@@ -8,6 +8,7 @@ from contest_52718_a import count_numbers_less_specified
 from contest_52718_b import max_substring_len
 from contest_52720_a import platforms_needed
 from contest_53688_a import measurements_per_second
+from contest_53688_b import rhyme
 
 
 class ContestTestCase(unittest.TestCase):
@@ -97,6 +98,16 @@ class ContestTestCase(unittest.TestCase):
         for value, expected in data:
             with self.subTest(value=value, expected=expected):
                 self.assertEqual(measurements_per_second(value), expected)
+
+    def test_rhyme(self):
+        data = (
+            (5, 2, 3),
+            (5, 1, 5),
+            (5, 6, 4),
+        )
+        for N, K, expected in data:
+            with self.subTest(N=N, K=K):
+                self.assertEqual(rhyme(N, K), expected)
 
 
 if __name__ == '__main__':
