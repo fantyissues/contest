@@ -3,6 +3,7 @@ import unittest
 from contest_52598_a import remove_duplicates
 from contest_52598_b import define_insert_index
 from contest_52599_a import is_regular_mountain
+from contest_52599_c import is_correct_sequence
 
 
 class ContestTestCase(unittest.TestCase):
@@ -41,6 +42,17 @@ class ContestTestCase(unittest.TestCase):
         for arr, expected in data:
             with self.subTest(arr=arr, expected=expected):
                 self.assertEqual(is_regular_mountain(arr), expected)
+
+    def test_is_correct_bracket_sequence(self):
+        data = (
+            ('()', True),
+            ('({[]})', True),
+            ('({[]})([])', True),
+            ('{[}', False),
+        )
+        for string, expected in data:
+            with self.subTest(string=string, expected=expected):
+                self.assertEqual(is_correct_sequence(string), expected)
 
 
 if __name__ == '__main__':
