@@ -2,19 +2,18 @@ import sys
 
 
 def remove_duplicates(arr):
-    if len(arr) < 2:
+    len_arr = len(arr)
+    if len_arr < 2:
         return arr
-    arr = arr[:]
-    index = 1
+    result = [arr[0]]
     duplicates = 0
-    while index < len(arr):
+    for index in range(1, len_arr):
         if arr[index-1] == arr[index]:
-            arr.pop(index)
             duplicates += 1
             continue
-        index += 1
-    arr.extend(['_'] * duplicates)
-    return arr
+        result.append(arr[index])
+    result.extend(['_'] * duplicates)
+    return result
 
 
 def main():
