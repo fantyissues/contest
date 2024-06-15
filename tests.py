@@ -6,6 +6,7 @@ from contest_52599_a import is_regular_mountain
 from contest_52599_c import is_correct_sequence
 from contest_52718_a import count_numbers_less_specified
 from contest_52718_b import max_substring_len
+from contest_52720_a import platforms_needed
 
 
 class ContestTestCase(unittest.TestCase):
@@ -74,6 +75,16 @@ class ContestTestCase(unittest.TestCase):
         for string, expected in data:
             with self.subTest(string=string, expected=expected):
                 self.assertEqual(max_substring_len(string), expected)
+
+    def test_platforms_needed(self):
+        data = (
+            ([1, 2], 3, 1),
+            ([3, 2, 2, 1], 3, 3),
+            ([3, 5, 3, 4], 5, 4),
+        )
+        for arr, limit, expected in data:
+            with self.subTest(arr=arr, limit=limit, expected=expected):
+                self.assertEqual(platforms_needed(arr, limit), expected)
 
 
 if __name__ == '__main__':
