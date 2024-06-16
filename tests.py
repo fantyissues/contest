@@ -10,6 +10,7 @@ from contest_52720_a import platforms_needed
 from contest_53688_a import measurements_per_second
 from contest_53688_b import rhyme
 from contest_53730_a import pattern_sorted
+from contest_53730_b import count_blocks
 
 
 class ContestTestCase(unittest.TestCase):
@@ -131,6 +132,16 @@ class ContestTestCase(unittest.TestCase):
         for arr, pattern, expected in data:
             with self.subTest(arr=arr, pattern=pattern, expected=expected):
                 self.assertEqual(pattern_sorted(arr, pattern), expected)
+
+    def test_count_blocks(self):
+        data = (
+            ([0, 1, 3, 2], 3),
+            ([3, 6, 7, 4, 1, 5, 0, 2], 1),
+            ([1, 0, 2, 3, 4], 4),
+        )
+        for arr, expected in data:
+            with self.subTest(arr=arr, expected=expected):
+                self.assertEqual(count_blocks(arr), expected)
 
 
 if __name__ == '__main__':
