@@ -9,6 +9,7 @@ from contest_52718_b import max_substring_len
 from contest_52720_a import platforms_needed
 from contest_53688_a import measurements_per_second
 from contest_53688_b import rhyme
+from contest_53730_a import pattern_sorted
 
 
 class ContestTestCase(unittest.TestCase):
@@ -108,6 +109,28 @@ class ContestTestCase(unittest.TestCase):
         for N, K, expected in data:
             with self.subTest(N=N, K=K):
                 self.assertEqual(rhyme(N, K), expected)
+
+    def test_pattern_sorted(self):
+        data = (
+            (
+                [2, 4, 3, 5, 6, 0, 9, 8, 7, 7],
+                [2, 4, 3, 5, 6, 0],
+                [2, 4, 3, 5, 6, 0, 7, 7, 8, 9],
+            ),
+            (
+                [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19],
+                [2, 1, 4, 3, 9, 6],
+                [2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19],
+            ),
+            (
+                [3, 10, 5, 9, 2, 7, 6, 0, 8, 3, 4],
+                [3, 10, 5, 9, 2, 7, 6, 0],
+                [3, 3, 10, 5, 9, 2, 7, 6, 0, 4, 8],
+            ),
+        )
+        for arr, pattern, expected in data:
+            with self.subTest(arr=arr, pattern=pattern, expected=expected):
+                self.assertEqual(pattern_sorted(arr, pattern), expected)
 
 
 if __name__ == '__main__':
