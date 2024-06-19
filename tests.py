@@ -11,6 +11,7 @@ from contest_53688_a import measurements_per_second
 from contest_53688_b import rhyme
 from contest_53730_a import pattern_sorted
 from contest_53730_b import count_blocks
+from contest_53748_a import satisfied_customers
 
 
 class ContestTestCase(unittest.TestCase):
@@ -142,6 +143,19 @@ class ContestTestCase(unittest.TestCase):
         for arr, expected in data:
             with self.subTest(arr=arr, expected=expected):
                 self.assertEqual(count_blocks(arr), expected)
+
+    def test_satisfied_customers(self):
+        data = (
+            ([8, 5, 5, 8, 6, 9, 8, 2, 4, 7],
+             [9, 8, 1, 1, 1, 5, 10, 8], 5),
+            ([8, 2, 4, 7, 8, 5, 5, 8, 6, 9],
+             [9, 8, 1, 1, 1, 5, 10, 8, 2, 7, 4, 3, 15], 9),
+        )
+        for orders, samples, expected in data:
+            with self.subTest(orders=orders, samples=samples,
+                              expected=expected):
+                self.assertEqual(satisfied_customers(orders, samples),
+                                 expected)
 
 
 if __name__ == '__main__':
