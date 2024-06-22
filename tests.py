@@ -12,6 +12,7 @@ from contest_53688_b import rhyme
 from contest_53730_a import pattern_sorted
 from contest_53730_b import count_blocks
 from contest_53748_a import satisfied_customers
+from contest_53750_a import decode_instructions
 
 
 class ContestTestCase(unittest.TestCase):
@@ -156,6 +157,16 @@ class ContestTestCase(unittest.TestCase):
                               expected=expected):
                 self.assertEqual(satisfied_customers(orders, samples),
                                  expected)
+
+    def test_decode_instructions(self):
+        data = (
+            ('3[a]2[bc]', 'aaabcbc'),
+            ('3[a2[c]]', 'accaccacc'),
+            ('2[abc]3[cd]ef', 'abcabccdcdcdef')
+        )
+        for instructions, expected in data:
+            with self.subTest(instructions=instructions, expected=expected):
+                self.assertEqual(decode_instructions(instructions), expected)
 
 
 if __name__ == '__main__':
