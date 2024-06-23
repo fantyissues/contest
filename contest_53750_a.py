@@ -1,19 +1,21 @@
+from string import digits
+
+
 def decode_instructions(encoded_instructions: str) -> str:
     stack: list[tuple[int, str]] = []
-    multiplier: int = 0
+    multiplier: str = ''
     instructions: str = ''
 
     for char in encoded_instructions:
-        if char.isdigit():
-            multiplier = multiplier * 10 + int(char)
+        if char in digits:
+            multiplier += char
         elif char == '[':
-            stack.append((multiplier, instructions))
-            multiplier = 0
+            stack.append((int(multiplier), instructions))
+            multiplier = ''
             instructions = ''
         elif char == ']':
-            multiplier, prev_instructions = stack.pop()
-            instructions = prev_instructions + multiplier * instructions
-            multiplier = 0
+            repeat, prev_instructions = stack.pop()
+            instructions = prev_instructions + repeat * instructions
         else:
             instructions += char
 
