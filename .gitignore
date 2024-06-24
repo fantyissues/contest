@@ -3,3 +3,6 @@ __pycache__/
 
 # Environments
 venv/
+
+# Flake8
+.flake8
