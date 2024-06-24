@@ -1,6 +1,3 @@
-import sys
-
-
 def satisfied_customers(orders: list[int], samples: list[int]) -> int:
     orders = sorted(orders, reverse=True)
     samples = sorted(samples, reverse=True)
@@ -19,13 +16,9 @@ def satisfied_customers(orders: list[int], samples: list[int]) -> int:
     return satisfied
 
 
-def main():
-    n = int(sys.stdin.readline())
-    orders = [int(num) for num in sys.stdin.readline().split()]
-    m = int(sys.stdin.readline())
-    samples = [int(num) for num in sys.stdin.readline().split()]
-    print(satisfied_customers(orders, samples))
-
-
 if __name__ == '__main__':
-    main()
+    n = int(input())
+    orders = [int(num) for num in input().split()]
+    m = int(input())
+    samples = [int(num) for num in input().split()]
+    print(satisfied_customers(orders, samples))

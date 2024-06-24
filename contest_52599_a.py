@@ -1,6 +1,3 @@
-import sys
-
-
 def is_regular_mountain(heights):
     len_heights = len(heights)
     index = 1
@@ -19,10 +16,6 @@ def is_regular_mountain(heights):
     return True
 
 
-def main():
-    arr = [int(num) for num in sys.stdin.readline().split()]
-    print(is_regular_mountain(arr))
-
-
 if __name__ == '__main__':
-    main()
+    arr = [int(num) for num in input().split()]
+    print(is_regular_mountain(arr))

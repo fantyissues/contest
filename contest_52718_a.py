@@ -1,6 +1,3 @@
-import sys
-
-
 def count_numbers_less_specified(numbers):
     num_amount = [0] * (max(numbers) + 1)
     for number in numbers:
@@ -9,10 +6,6 @@ def count_numbers_less_specified(numbers):
     return result
 
 
-def main():
-    numbers = [int(num) for num in sys.stdin.readline().split()]
-    print(*count_numbers_less_specified(numbers))
-
-
 if __name__ == '__main__':
-    main()
+    numbers = [int(num) for num in input().split()]
+    print(*count_numbers_less_specified(numbers))

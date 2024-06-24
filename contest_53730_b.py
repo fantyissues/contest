@@ -9,11 +9,7 @@ def count_blocks(arr: list[int]) -> int:
     return blocks
 
 
-def main():
+if __name__ == '__main__':
     n = int(input())
     arr = [int(num) for num in input().split()]
     print(count_blocks(arr))
-
-
-if __name__ == '__main__':
-    main()

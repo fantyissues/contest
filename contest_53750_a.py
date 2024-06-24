@@ -22,10 +22,5 @@ def decode_instructions(encoded_instructions: str) -> str:
     return instructions
 
 
-def main():
-    instructions = input()
-    print(decode_instructions(instructions))
-
-
 if __name__ == '__main__':
-    main()
+    print(decode_instructions(input()))

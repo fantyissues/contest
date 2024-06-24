@@ -1,6 +1,3 @@
-import sys
-
-
 def max_substring_len(string):
     max_substirng_len = 0
     string_len = len(string)
@@ -14,10 +11,5 @@ def max_substring_len(string):
     return max_substirng_len
 
 
-def main():
-    string = sys.stdin.readline().rstrip()
-    print(max_substring_len(string))
-
-
 if __name__ == '__main__':
-    main()
+    print(max_substring_len(input()))

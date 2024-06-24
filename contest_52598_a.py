@@ -1,6 +1,3 @@
-import sys
-
-
 def remove_duplicates(arr):
     len_arr = len(arr)
     if len_arr < 2:
@@ -16,11 +13,7 @@ def remove_duplicates(arr):
     return result
 
 
-def main():
-    n = int(sys.stdin.readline())
-    arr = [int(num) for num in sys.stdin.readline().split()]
-    print(*remove_duplicates(arr))
-
-
 if __name__ == '__main__':
-    main()
+    n = int(input())
+    arr = [int(num) for num in input().split()]
+    print(*remove_duplicates(arr))

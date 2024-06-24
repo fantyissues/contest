@@ -1,6 +1,3 @@
-import sys
-
-
 def pattern_sorted(arr: list[int], pattern: list[int]) -> list[int]:
     arr = arr[:]
     len_arr = len(arr)
@@ -14,13 +11,9 @@ def pattern_sorted(arr: list[int], pattern: list[int]) -> list[int]:
     return arr
 
 
-def main():
-    n = int(sys.stdin.readline())
-    containers = [int(num) for num in sys.stdin.readline().split()]
-    m = int(sys.stdin.readline())
-    pattern = [int(num) for num in sys.stdin.readline().split()]
-    print(*pattern_sorted(containers, pattern))
-
-
 if __name__ == '__main__':
-    main()
+    n = int(input())
+    containers = [int(num) for num in input().split()]
+    m = int(input())
+    pattern = [int(num) for num in input().split()]
+    print(*pattern_sorted(containers, pattern))

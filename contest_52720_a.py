@@ -1,6 +1,3 @@
-import sys
-
-
 def platforms_needed(robots_weights: list[int], limit: int) -> int:
     robots_weights = sorted(robots_weights)
     left: int = 0
@@ -14,11 +11,7 @@ def platforms_needed(robots_weights: list[int], limit: int) -> int:
     return result
 
 
-def main():
-    robots_weights = [int(weight) for weight in sys.stdin.readline().split()]
-    limit = int(sys.stdin.readline())
-    print(platforms_needed(robots_weights, limit))
-
-
 if __name__ == '__main__':
-    main()
+    robots_weights = [int(weight) for weight in input().split()]
+    limit = int(input())
+    print(platforms_needed(robots_weights, limit))

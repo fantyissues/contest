@@ -1,6 +1,3 @@
-import sys
-
-
 def measurements_per_second(generation):
     if generation < 2:
         return 1
@@ -8,10 +5,5 @@ def measurements_per_second(generation):
             + measurements_per_second(generation - 2))
 
 
-def main():
-    generation = int(sys.stdin.readline())
-    print(measurements_per_second(generation))
-
-
 if __name__ == '__main__':
-    main()
+    print(measurements_per_second(int(input())))

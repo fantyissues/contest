@@ -1,6 +1,3 @@
-import sys
-
-
 def is_correct_sequence(bracket_sequence):
     bracket_mapping = {')': '(', ']': '[', '}': '{'}
     stack = []
@@ -14,10 +11,5 @@ def is_correct_sequence(bracket_sequence):
     return not stack
 
 
-def main():
-    string = sys.stdin.readline().rstrip()
-    print(is_correct_sequence(string))
-
-
 if __name__ == '__main__':
-    main()
+    print(is_correct_sequence(input()))
